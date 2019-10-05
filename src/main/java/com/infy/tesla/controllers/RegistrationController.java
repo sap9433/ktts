@@ -1,12 +1,12 @@
 package com.infy.tesla.controllers;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import model.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-//@Mapping(="/ktts")
+@RequestMapping("/ktts")
 public class RegistrationController {
-    @GetMapping("/register")
-    public String saveUser() {
-        return "Greetings from Spring Boot!";
+    @PostMapping("/register")
+    public String saveUser(@ModelAttribute User user) {
+        return user.getFname();
     }
 }
